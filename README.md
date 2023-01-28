@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Pokedex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=bugs)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=pastordesoles_pokedex-xavier-sans-borras&metric=coverage)](https://sonarcloud.io/summary/new_code?id=pastordesoles_pokedex-xavier-sans-borras)
 
-## Available Scripts
+> Find your Pokemon!.
+> Live demo [_here_](https://pokedex-xsb.netlify.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [General Info](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [Contact](#contact)
+<!-- * [License](#license) -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## General Information
 
-The page will reload if you make edits.\
+Basic Read that uses the Pokeapi to show data from the first generation of Pokemon. You can see a general list, click on to a Pokemon and get detailed information about it and filter by name. The website is responsive with different breakpoints for mobile, tablet or desktop.
+
+## Technologies Used
+
+- React
+- Jest
+- React Testing Library
+- Typescript
+- StyledComponents
+- Axios
+- Faker-js
+- Fishery
+- MSW
+- Cypress
+
+## Features
+
+- Get a list with the first generation of Pokemons.
+- Get detailed information about the Pokemon you choose.
+- Filter Pokemons by name.
+
+## Screenshots
+
+## Setup
+
+You will find all the dependencies in the _package.json_ file. Run the command _npm install_ in your CLI to install them.
+
+The command _npm run start_ runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `npm test`
+## Project Status
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project is: _in progress_
 
-### `npm run build`
+## Room for Improvement
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contact
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Created by [Xavi](https://www.linkedin.com/in/xaviersansb/) - feel free to contact me!
