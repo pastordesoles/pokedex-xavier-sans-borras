@@ -33,6 +33,7 @@ Basic Read that uses the Pokeapi to show data from the first generation of Pokem
 - Fishery
 - MSW
 - Cypress
+- Lint-staged
 
 ## Features
 
