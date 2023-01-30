@@ -2,9 +2,9 @@ import { useCallback } from "react";
 import { PokemonData, PokemonName } from "./types";
 
 const useApi = () => {
+  let newUrl = process.env.REACT_APP_API_URL as string;
   const loadAllPokemon = useCallback(async () => {
     try {
-      let newUrl = `https://pokeapi.co/api/v2/pokemon?&limit=151`;
       const response = await fetch(newUrl);
       const { results } = (await response.json()) as PokemonName;
       const pokemonData: PokemonData[] = [];
@@ -20,7 +20,7 @@ const useApi = () => {
     } catch {
       throw new Error("Ups.....Fatal Error BOOOM");
     }
-  }, []);
+  }, [newUrl]);
 
   return { loadAllPokemon };
 };
