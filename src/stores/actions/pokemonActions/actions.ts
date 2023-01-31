@@ -6,7 +6,7 @@ export interface Action {
   payload?: unknown;
 }
 
-export interface LoadCharactersAction extends Action {
-  type: PokemonActionType.loadPokemons;
+export interface LoadPokemonAction extends Action {
+  type: PokemonActionType.loadPokemon;
   payload: PokemonData[];
 }
