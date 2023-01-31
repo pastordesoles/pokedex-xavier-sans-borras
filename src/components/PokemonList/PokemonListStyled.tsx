@@ -17,6 +17,8 @@ const PokemonListStyled = styled.main`
       row-gap: 30px;
       grid-template-columns: repeat(1, 1fr);
       padding: 2rem 0;
+      justify-items: center;
+      justify-content: center;
     }
   }
 
