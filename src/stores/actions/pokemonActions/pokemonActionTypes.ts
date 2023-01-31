@@ -1,5 +1,5 @@
 enum PokemonActionType {
-  loadPokemons,
+  loadPokemon,
   unknownAction,
   loadDetailedPokemon,
 }
