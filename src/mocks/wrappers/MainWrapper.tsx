@@ -1,8 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import PokemonContextProvider from "../../stores/contexts/pokemonContext/PokemonContextProvider";
-import GlobalStyle from "../../styles/GlobalStyle";
 import mainTheme from "../../styles/mainTheme";
+import GlobalStyle from "../../styles/GlobalStyle";
 
 interface MainWrapperProps {
   children: JSX.Element | JSX.Element[];

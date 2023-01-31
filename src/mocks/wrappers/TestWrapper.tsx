@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext";
-import GlobalStyle from "../../styles/GlobalStyle";
 import mainTheme from "../../styles/mainTheme";
+import GlobalStyle from "../../styles/GlobalStyle";
 import mockPokemonContext from "../mockContexts/mockPokemonContext";
 
 interface TestWrapperProps {

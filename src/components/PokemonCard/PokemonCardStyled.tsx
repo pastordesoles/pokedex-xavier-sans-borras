@@ -10,6 +10,10 @@ const PokemonCardStyled = styled.li`
   height: 250px;
   width: 250px;
   background-color: white;
+
+  :hover {
+    background-color: #bebebe;
+  }
 `;
 
 export default PokemonCardStyled;
