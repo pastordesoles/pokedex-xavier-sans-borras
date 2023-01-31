@@ -2,7 +2,7 @@ import { PokemonData } from "../../../hooks/types";
 import { loadPokemonActionsCreator } from "./pokemonActionCreators";
 import PokemonActionType from "./pokemonActionTypes";
 
-describe("Given a PokemonActionsCreator", () => {
+describe("Given a pokemonActionsCreators", () => {
   const pokemon: PokemonData[] = [
     {
       name: "Charmander",

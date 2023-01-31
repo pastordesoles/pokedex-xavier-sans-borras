@@ -1,5 +1,4 @@
 import { useReducer } from "react";
-import { PokemonData } from "../../../hooks/types";
 import pokemonReducer from "../../reducers/pokemonReducer/pokemonReducer";
 import PokemonContext from "./PokemonContext";
 import { CurrentPokemonState } from "./types";
@@ -10,7 +9,7 @@ interface PokemonContextProviderProps {
 
 const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
   const [currentPokemonState, dispatch] = useReducer(pokemonReducer, {
-    currentPokemon: {} as PokemonData[],
+    currentPokemon: [],
   } as CurrentPokemonState);
 
   return (
