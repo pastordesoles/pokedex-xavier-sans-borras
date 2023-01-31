@@ -19,7 +19,7 @@ const PokemonList = (): JSX.Element => {
   return (
     <>
       <PokemonListStyled className="pokemon">
-        <h2 className="pokemon__title">aaa</h2>
+        <h2 className="pokemon__title">Generation 1</h2>
         <ul className="pokemon__list">
           {currentPokemon.map((pokemon, key) => (
             <PokemonCard pokemon={pokemon} key={key} />

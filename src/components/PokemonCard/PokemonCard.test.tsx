@@ -12,7 +12,8 @@ describe("Given a PokemonCard component", () => {
       const pokemonAccessibleName = "Charmander";
 
       const pokemonName = screen.getByRole("heading", {
-        name: `${pokemonAccessibleName}`,
+        name: pokemonAccessibleName,
+        level: 3,
       });
 
       expect(pokemonName).toHaveTextContent(pokemonAccessibleName);
