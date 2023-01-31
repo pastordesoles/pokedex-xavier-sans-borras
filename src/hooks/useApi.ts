@@ -1,7 +1,10 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import { loadPokemonActionsCreator } from "../stores/actions/pokemonActions/pokemonActionCreators";
+import PokemonContext from "../stores/contexts/pokemonContext/PokemonContext";
 import { PokemonData, PokemonName } from "./types";
 
 const useApi = () => {
+  const { dispatch: dispatchPokemon } = useContext(PokemonContext);
   let newUrl = process.env.REACT_APP_API_URL!;
   const loadAllPokemon = useCallback(async () => {
     try {
@@ -16,11 +19,11 @@ const useApi = () => {
         });
       });
 
-      return pokemonData;
+      dispatchPokemon(loadPokemonActionsCreator(pokemonData));
     } catch {
       throw new Error("Ups.....Fatal Error BOOOM");
     }
-  }, [newUrl]);
+  }, [dispatchPokemon, newUrl]);
 
   return { loadAllPokemon };
 };
