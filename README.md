@@ -28,7 +28,6 @@ Basic Read that uses the Pokeapi to show data from the first generation of Pokem
 - React Testing Library
 - Typescript
 - StyledComponents
-- Axios
 - Faker-js
 - Fishery
 - MSW

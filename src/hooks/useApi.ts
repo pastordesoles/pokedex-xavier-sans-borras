@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { PokemonData, PokemonName } from "./types";
 
 const useApi = () => {
-  let newUrl = process.env.REACT_APP_API_URL as string;
+  let newUrl = process.env.REACT_APP_API_URL!;
   const loadAllPokemon = useCallback(async () => {
     try {
       const response = await fetch(newUrl);
