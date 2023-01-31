@@ -19,7 +19,17 @@ const PokemonList = (): JSX.Element => {
   return (
     <>
       <PokemonListStyled className="pokemon">
-        <h2 className="pokemon__title">Generation 1</h2>
+        <aside>
+          <img src="/images/immfly.png" alt="Immfly" width="100" height="100" />
+          <img
+            src="/images/pokemonTitle.png"
+            alt="Pokemon"
+            width="400"
+            height="400"
+          />
+          <h2 className="pokemon__title">Generation 1</h2>
+          <span>{`${currentPokemon.length} Pokemon`}</span>
+        </aside>
         <ul className="pokemon__list">
           {currentPokemon.map((pokemon, key) => (
             <PokemonCard pokemon={pokemon} key={key} />
