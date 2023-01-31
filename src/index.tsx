@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import PokemonContextProvider from "./stores/contexts/pokemonContext/PokemonContextProvider";
 
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <PokemonContextProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </PokemonContextProvider>
   </React.StrictMode>
 );
