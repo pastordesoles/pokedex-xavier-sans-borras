@@ -3,7 +3,6 @@ import {
   Action,
   LoadPokemonAction,
 } from "../../actions/pokemonActions/actions";
-import { loadPokemonActionsCreator } from "../../actions/pokemonActions/pokemonActionCreators";
 import PokemonActionType from "../../actions/pokemonActions/pokemonActionTypes";
 import { CurrentPokemonState } from "../../contexts/pokemonContext/types";
 import pokemonReducer from "./pokemonReducer";
