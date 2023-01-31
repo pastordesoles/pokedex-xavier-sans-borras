@@ -5,7 +5,7 @@ const PokemonListStyled = styled.main`
   flex-direction: column;
   align-items: center;
 
-  article {
+  aside {
     display: flex;
     flex-direction: column;
     align-items: center;
