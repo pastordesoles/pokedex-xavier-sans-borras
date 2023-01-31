@@ -22,13 +22,13 @@ const PokemonListStyled = styled.main`
     }
   }
 
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: 479px) {
     align-items: unset;
 
     .pokemon {
       &__list {
-        grid-template-columns: repeat(2, 260px);
-        column-gap: calc((100% - (2 * 260px)) / 2);
+        grid-template-columns: repeat(2, 240px);
+        column-gap: calc((100% - (2 * 240px)) / 2);
       }
     }
   }
@@ -38,8 +38,8 @@ const PokemonListStyled = styled.main`
 
     .pokemon {
       &__list {
-        grid-template-columns: repeat(3, 260px);
-        column-gap: calc((100% - (3 * 260px)) / 3);
+        grid-template-columns: repeat(3, 240px);
+        column-gap: calc((100% - (3 * 240px)) / 3);
       }
     }
   }
