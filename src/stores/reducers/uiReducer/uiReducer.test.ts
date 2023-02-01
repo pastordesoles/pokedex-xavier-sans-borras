@@ -1,4 +1,4 @@
-import mockCurrentUiState from "../../../mocks/mockContexts/mockCurrentUiState";
+import { mockCurrentUiStateFalse } from "../../../mocks/mockContexts/mockCurrentUiState";
 import { UiAction } from "../../actions/uiActions/actions";
 import UiActionTypes from "../../actions/uiActions/uiActionTypes";
 import { CurrentUiState } from "../../contexts/uiContext/types";
@@ -15,7 +15,7 @@ describe("Given the function uiReducer", () => {
         type: UiActionTypes.isLoadingTrue,
       };
 
-      const currentUiState = mockCurrentUiState;
+      const currentUiState = mockCurrentUiStateFalse;
 
       const expectedUiState = uiReducer(
         currentUiState as CurrentUiState,
@@ -36,7 +36,7 @@ describe("Given the function uiReducer", () => {
         type: UiActionTypes.isLoadingFalse,
       };
 
-      const currentUiState = mockCurrentUiState;
+      const currentUiState = mockCurrentUiStateFalse;
 
       const expectedUiState = uiReducer(
         currentUiState as CurrentUiState,
