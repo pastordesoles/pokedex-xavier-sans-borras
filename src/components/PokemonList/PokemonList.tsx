@@ -15,13 +15,12 @@ const PokemonList = (): JSX.Element => {
     currentUiState: { isLoading },
   } = useContext(UiContext);
 
-  const { loadAllPokemon, loadPokemonDetail } = useApi();
+  const { loadAllPokemon } = useApi();
   useEffect(() => {
     (async () => {
       loadAllPokemon();
-      loadPokemonDetail();
     })();
-  }, [loadAllPokemon, loadPokemonDetail]);
+  }, [loadAllPokemon]);
 
   return (
     <>
