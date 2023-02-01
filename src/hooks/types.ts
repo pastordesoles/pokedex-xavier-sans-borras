@@ -7,7 +7,7 @@ export interface PokemonData {
   image: string;
 }
 
-export interface PokemonDetail {
+export interface PokemonDetail extends PokemonData {
   abilities: [];
   height: number;
   id: number;
