@@ -54,7 +54,8 @@
     "collectCoverageFrom": [
       "!src/index.tsx",
       "!src/setupTests.ts",
-      "!src/reportWebVitals.ts"
+      "!src/reportWebVitals.ts",
+      "!src/styles/GlobalStyle.tsx"
     ]
   }
 }
