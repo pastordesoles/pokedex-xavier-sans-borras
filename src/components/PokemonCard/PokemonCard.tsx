@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PokemonData } from "../../hooks/types";
 import capitalize from "../../utils/capitalize";
 import PokemonCardStyled from "./PokemonCardStyled";
@@ -20,7 +21,9 @@ const PokemonCard = ({
         loading="lazy"
       ></img>
 
-      <h3 className="pokemon-card__title">{capitalize(name)}</h3>
+      <Link to={`/pokemon/${name}`}>
+        <h3 className="pokemon-card__title">{capitalize(name)}</h3>
+      </Link>
     </PokemonCardStyled>
   );
 };
