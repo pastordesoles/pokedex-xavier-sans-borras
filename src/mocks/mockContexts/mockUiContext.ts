@@ -1,9 +1,15 @@
 import UiContextStructure from "../../stores/contexts/uiContext/types";
-import mockCurrentUiState from "./mockCurrentUiState";
+import {
+  mockCurrentUiStateFalse,
+  mockCurrentUiStateTrue,
+} from "./mockCurrentUiState";
 
-const mockUiContext: UiContextStructure = {
-  currentUiState: mockCurrentUiState,
+export const mockUiContextFalse: UiContextStructure = {
+  currentUiState: mockCurrentUiStateFalse,
   dispatch: jest.fn(),
 };
 
-export default mockUiContext;
+export const mockUiContextTrue: UiContextStructure = {
+  currentUiState: mockCurrentUiStateTrue,
+  dispatch: jest.fn(),
+};

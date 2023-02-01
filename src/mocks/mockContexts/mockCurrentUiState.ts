@@ -1,7 +1,9 @@
 import { CurrentUiState } from "../../stores/contexts/uiContext/types";
 
-const mockCurrentUiState: CurrentUiState = {
+export const mockCurrentUiStateFalse: CurrentUiState = {
   isLoading: false,
 };
 
-export default mockCurrentUiState;
+export const mockCurrentUiStateTrue: CurrentUiState = {
+  isLoading: true,
+};

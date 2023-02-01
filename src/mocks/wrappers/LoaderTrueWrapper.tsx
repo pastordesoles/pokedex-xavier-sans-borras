@@ -4,16 +4,16 @@ import mainTheme from "../../styles/mainTheme";
 import GlobalStyle from "../../styles/GlobalStyle";
 import mockPokemonContext from "../mockContexts/mockPokemonContext";
 import UiContext from "../../stores/contexts/uiContext/UiContext";
-import { mockUiContextFalse } from "../mockContexts/mockUiContext";
+import { mockUiContextTrue } from "../mockContexts/mockUiContext";
 
 interface TestWrapperProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const TestWrapper = ({ children }: TestWrapperProps): JSX.Element => {
+const LoaderTrueWrapper = ({ children }: TestWrapperProps): JSX.Element => {
   return (
     <PokemonContext.Provider value={mockPokemonContext}>
-      <UiContext.Provider value={mockUiContextFalse}>
+      <UiContext.Provider value={mockUiContextTrue}>
         <ThemeProvider theme={mainTheme}>
           <GlobalStyle />
           {children}
@@ -23,4 +23,4 @@ const TestWrapper = ({ children }: TestWrapperProps): JSX.Element => {
   );
 };
 
-export default TestWrapper;
+export default LoaderTrueWrapper;
