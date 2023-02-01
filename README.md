@@ -29,6 +29,7 @@ Basic Read that uses the Pokeapi to show data from the first generation of Pokem
 - Typescript
 - StyledComponents
 - MSW
+- React Router Dom
 - Cypress
 - Lint-staged
 
