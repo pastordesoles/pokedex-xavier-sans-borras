@@ -21,6 +21,7 @@ select {
 button,
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 ul {
   list-style: none;
