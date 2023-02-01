@@ -5,6 +5,7 @@ import {
   isLoadingTrueActionCreator,
 } from "../stores/actions/uiActions/uiActionCreators";
 import PokemonContext from "../stores/contexts/pokemonContext/PokemonContext";
+import UiContext from "../stores/contexts/uiContext/UiContext";
 import { PokemonData, PokemonDetail, PokemonName } from "./types";
 
 let details = "https://pokeapi.co/api/v2/pokemon/charizard";
