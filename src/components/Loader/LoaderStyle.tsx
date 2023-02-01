@@ -16,9 +16,9 @@ const LoaderStyle = styled.span`
     content: "";
     box-sizing: border-box;
     position: absolute;
-    inset: 0px;
+    inset: 55px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 5px solid #2b1c2f;
     animation: prixClipFix 2s linear infinite;
   }
   @keyframes rotate {
