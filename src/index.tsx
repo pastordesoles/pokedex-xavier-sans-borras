@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import PokemonContextProvider from "./stores/contexts/pokemonContext/PokemonContextProvider";
+import UiContextProvider from "./stores/contexts/uiContext/UiContextProvider";
 import GlobalStyle from "./styles/GlobalStyle";
 import mainTheme from "./styles/mainTheme";
 
@@ -14,12 +15,14 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <PokemonContextProvider>
-      <BrowserRouter>
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyle />
-          <App />
-        </ThemeProvider>
-      </BrowserRouter>
+      <UiContextProvider>
+        <BrowserRouter>
+          <ThemeProvider theme={mainTheme}>
+            <GlobalStyle />
+            <App />
+          </ThemeProvider>
+        </BrowserRouter>
+      </UiContextProvider>
     </PokemonContextProvider>
   </React.StrictMode>
 );

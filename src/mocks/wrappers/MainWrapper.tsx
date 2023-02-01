@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import PokemonContextProvider from "../../stores/contexts/pokemonContext/PokemonContextProvider";
 import mainTheme from "../../styles/mainTheme";
 import GlobalStyle from "../../styles/GlobalStyle";
+import UiContextProvider from "../../stores/contexts/uiContext/UiContextProvider";
 
 interface MainWrapperProps {
   children: JSX.Element | JSX.Element[];
@@ -11,12 +12,14 @@ interface MainWrapperProps {
 const MainWrapper = ({ children }: MainWrapperProps): JSX.Element => {
   return (
     <PokemonContextProvider>
-      <BrowserRouter>
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyle />
-          {children}
-        </ThemeProvider>
-      </BrowserRouter>
+      <UiContextProvider>
+        <BrowserRouter>
+          <ThemeProvider theme={mainTheme}>
+            <GlobalStyle />
+            {children}
+          </ThemeProvider>
+        </BrowserRouter>
+      </UiContextProvider>
     </PokemonContextProvider>
   );
 };
