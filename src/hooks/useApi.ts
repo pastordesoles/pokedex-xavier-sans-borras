@@ -28,8 +28,8 @@ const useApi = () => {
       });
       dispatchUi(isLoadingFalseActionCreator());
       dispatchPokemon(loadPokemonActionsCreator(pokemonData));
-    } catch {
-      throw new Error("Ups.....Fatal Error BOOOM");
+    } catch (error: unknown) {
+      throw error;
     }
   }, [dispatchPokemon, dispatchUi, newUrl]);
 
