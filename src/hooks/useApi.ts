@@ -23,7 +23,7 @@ const useApi = () => {
       dispatchUi(isLoadingTrueActionCreator());
       try {
         if (name) {
-          const detailsUrl = `${details}${name}`;
+          const detailsUrl = `${details}${name.toLowerCase()}`;
           const response = await fetch(detailsUrl);
 
           const results = (await response.json()) as PokemonDetail;
@@ -78,7 +78,9 @@ const useApi = () => {
         const pokemonStats: PokemonStats = {
           abilities: {
             abilityOne: capitalize(abilityOne.ability.name),
-            abilityTwo: capitalize(abilityTwo.ability.name),
+            abilityTwo: abilityTwo
+              ? capitalize(abilityTwo.ability.name)
+              : "None",
           },
           height: detailedPokemon.height,
           id: detailedPokemon.id,

@@ -15,7 +15,7 @@ const DetailsStyled = styled.main`
     padding: 2rem;
     background-color: white;
     height: 450px;
-    width: 450px;
+    width: 320px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
