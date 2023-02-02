@@ -78,7 +78,9 @@ const useApi = () => {
         const pokemonStats: PokemonStats = {
           abilities: {
             abilityOne: capitalize(abilityOne.ability.name),
-            abilityTwo: capitalize(abilityTwo.ability.name),
+            abilityTwo: abilityTwo
+              ? capitalize(abilityTwo.ability.name)
+              : "None",
           },
           height: detailedPokemon.height,
           id: detailedPokemon.id,
