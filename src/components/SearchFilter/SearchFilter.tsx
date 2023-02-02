@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import useApi from "../../hooks/useApi";
 
-const SearchInput = (): JSX.Element => {
+const SearchFilter = (): JSX.Element => {
   const { loadPokemonDetail } = useApi();
 
   const debounce = <T extends any[]>(
@@ -36,4 +36,4 @@ const SearchInput = (): JSX.Element => {
   );
 };
 
-export default SearchInput;
+export default SearchFilter;
