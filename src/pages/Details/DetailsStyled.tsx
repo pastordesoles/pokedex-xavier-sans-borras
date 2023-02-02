@@ -22,6 +22,11 @@ const DetailsStyled = styled.main`
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    @media only screen and (min-width: 1150px) {
+      :hover {
+        background-color: #bebebe;
+      }
+    }
   }
   .pokemon-card-basic {
     display: flex;
@@ -53,12 +58,6 @@ const DetailsStyled = styled.main`
   ul {
     list-style: disc;
     padding-left: 8%;
-  }
-
-  @media only screen and (min-width: 1150px) {
-    :hover {
-      background-color: #bebebe;
-    }
   }
 `;
 
