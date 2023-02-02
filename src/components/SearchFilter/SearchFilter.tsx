@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import useApi from "../../hooks/useApi";
+import SearchFilterStyled from "./SearchFilterStyled";
 
 const SearchFilter = (): JSX.Element => {
   const { loadPokemonDetail } = useApi();
@@ -22,7 +23,7 @@ const SearchFilter = (): JSX.Element => {
 
   return (
     <>
-      <div className="group">
+      <SearchFilterStyled className="group">
         <input
           placeholder="Search"
           type="search"
@@ -31,7 +32,7 @@ const SearchFilter = (): JSX.Element => {
             debouncePost(e.target.value);
           }}
         />
-      </div>
+      </SearchFilterStyled>
     </>
   );
 };

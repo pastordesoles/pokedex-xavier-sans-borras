@@ -31,9 +31,9 @@ const Details = (): JSX.Element => {
 
   return (
     <>
-      <SearchFilter />
       {isLoading && <Loader />}
       <DetailsStyled>
+        <SearchFilter />
         <article className="pokemon-card">
           <Link to={`/pokemon`}>
             <FontAwesomeIcon className="return" icon={faXmark} />
