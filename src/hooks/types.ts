@@ -15,7 +15,7 @@ export interface PokemonDetail extends PokemonData {
 }
 
 export interface PokemonStats extends PokemonData {
-  abilities: { abilityOne: string; abilityTwo: string };
+  abilities: { abilityOne: string; abilityTwo?: string };
   height: number;
   id: number;
   types: string;

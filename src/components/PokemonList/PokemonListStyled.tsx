@@ -10,6 +10,7 @@ const PokemonListStyled = styled.main`
     flex-direction: column;
     align-items: center;
     padding-bottom: 1rem;
+    gap: 1rem;
   }
   .immfly {
     position: absolute;
