@@ -11,6 +11,10 @@ const PokemonCardStyled = styled.li`
     height: 250px;
     width: 250px;
     background-color: white;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   @media only screen and (min-width: 1150px) {
