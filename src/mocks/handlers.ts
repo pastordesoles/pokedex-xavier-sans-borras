@@ -9,7 +9,7 @@ const handlers = [
   }),
 
   rest.get(`${apiUrl}`, (request, response, context) => {
-    return response(context.status(404), context.json({}));
+    return response.once(context.status(404), context.json({}));
   }),
 ];
 
