@@ -11,6 +11,7 @@ const DetailsStyled = styled.main`
   position: relative;
 
   article {
+    position: relative;
     padding: 2rem;
     background-color: white;
     height: 450px;
@@ -32,8 +33,8 @@ const DetailsStyled = styled.main`
 
   .return {
     position: absolute;
-    left: 70%;
-    right: -70%;
+    left: 85%;
+    right: -85%;
   }
 
   .bold {
