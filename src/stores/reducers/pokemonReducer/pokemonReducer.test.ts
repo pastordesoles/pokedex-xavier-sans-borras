@@ -1,4 +1,4 @@
-import { PokemonDetail } from "../../../hooks/types";
+import { PokemonStats } from "../../../hooks/types";
 import {
   mockPokemonDetail,
   mockPokemonResponse,
@@ -71,7 +71,7 @@ describe("Given a pokemonReducer", () => {
 
       const currentPokemonState: CurrentPokemonState = {
         currentPokemon: [],
-        currentDetailedPokemon: {} as PokemonDetail,
+        currentDetailedPokemon: {} as PokemonStats,
       };
 
       const resultPokemon = pokemonReducer(currentPokemonState, unknownAction);

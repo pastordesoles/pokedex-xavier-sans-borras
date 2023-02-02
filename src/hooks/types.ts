@@ -8,7 +8,15 @@ export interface PokemonData {
 }
 
 export interface PokemonDetail extends PokemonData {
-  abilities: [];
+  abilities: [{ ability: { name: string } }, { ability: { name: string } }];
   height: number;
   id: number;
+  types: [{ type: { name: string } }];
+}
+
+export interface PokemonStats extends PokemonData {
+  abilities: { abilityOne: string; abilityTwo: string };
+  height: number;
+  id: number;
+  types: string;
 }

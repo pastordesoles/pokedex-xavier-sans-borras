@@ -1,4 +1,4 @@
-import { PokemonData, PokemonDetail } from "../../../hooks/types";
+import { PokemonData, PokemonStats } from "../../../hooks/types";
 import { LoadPokemonAction, LoadPokemonDetail } from "./actions";
 import PokemonActionType from "./pokemonActionTypes";
 
@@ -10,7 +10,7 @@ export const loadPokemonActionsCreator = (
 });
 
 export const loadPokemonDetailsActionsCreator = (
-  pokemonDetail: PokemonDetail
+  pokemonDetail: PokemonStats
 ): LoadPokemonDetail => ({
   type: PokemonActionType.loadDetailedPokemon,
   payload: pokemonDetail,

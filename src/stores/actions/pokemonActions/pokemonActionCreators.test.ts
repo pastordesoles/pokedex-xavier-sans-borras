@@ -1,4 +1,4 @@
-import { PokemonData, PokemonDetail } from "../../../hooks/types";
+import { PokemonData, PokemonDetail, PokemonStats } from "../../../hooks/types";
 import {
   loadPokemonActionsCreator,
   loadPokemonDetailsActionsCreator,
@@ -13,12 +13,13 @@ describe("Given a pokemonActionsCreators", () => {
     },
   ];
 
-  const pokemonDetail: PokemonDetail = {
+  const pokemonDetail: PokemonStats = {
     name: "Charmander",
     image: "",
-    abilities: [],
+    abilities: { abilityOne: "fire", abilityTwo: "fireTwo" },
     height: 0,
     id: 0,
+    types: "fire",
   };
 
   describe("When it's function loadPokemonActionCreator receives a Pokemon named 'Charmander'", () => {

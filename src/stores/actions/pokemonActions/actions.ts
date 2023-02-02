@@ -1,4 +1,4 @@
-import { PokemonData, PokemonDetail } from "../../../hooks/types";
+import { PokemonData, PokemonStats } from "../../../hooks/types";
 import PokemonActionType from "./pokemonActionTypes";
 
 export interface Action {
@@ -13,5 +13,5 @@ export interface LoadPokemonAction extends Action {
 
 export interface LoadPokemonDetail extends Action {
   type: PokemonActionType.loadDetailedPokemon;
-  payload: PokemonDetail;
+  payload: PokemonStats;
 }
