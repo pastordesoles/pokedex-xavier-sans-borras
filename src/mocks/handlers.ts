@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import mockPokemonResponse from "./mockResponses/mockPokemonResponse";
+import { mockPokemonResponse } from "./mockResponses/mockPokemonResponse";
 
 let apiUrl = "https://pokeapi.co/api/v2/pokemon?&limit=151";
 

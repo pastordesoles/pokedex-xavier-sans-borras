@@ -9,6 +9,10 @@ const PokemonListStyled = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 1rem;
+  }
+  .immfly {
+    position: absolute;
   }
 
   .pokemon {

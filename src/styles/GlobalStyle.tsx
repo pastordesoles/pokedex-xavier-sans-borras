@@ -9,6 +9,7 @@ html {
   margin: 0;
   font-family: sans-serif;
   scroll-behavior: smooth;
+  
 }
 body {
   background-color: ${(props) => props.theme.colors.mainColors.gray};
@@ -21,6 +22,7 @@ select {
 button,
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 ul {
   list-style: none;

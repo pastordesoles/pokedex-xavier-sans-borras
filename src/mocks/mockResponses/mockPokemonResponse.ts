@@ -1,6 +1,6 @@
-import { PokemonData } from "../../hooks/types";
+import { PokemonData, PokemonStats } from "../../hooks/types";
 
-const mockPokemonResponse: PokemonData[] = [
+export const mockPokemonResponse: PokemonData[] = [
   {
     name: "Charmander",
     image: "",
@@ -11,4 +11,11 @@ const mockPokemonResponse: PokemonData[] = [
   },
 ];
 
-export default mockPokemonResponse;
+export const mockPokemonDetail: PokemonStats = {
+  name: "Charmander",
+  image: "",
+  abilities: { abilityOne: "fire", abilityTwo: "fireTwo" },
+  height: 0,
+  id: 0,
+  types: "fire",
+};

@@ -1,8 +1,14 @@
 import { PokemonContextStructure } from "../../stores/contexts/pokemonContext/types";
-import mockPokemonResponse from "../mockResponses/mockPokemonResponse";
+import {
+  mockPokemonResponse,
+  mockPokemonDetail,
+} from "../mockResponses/mockPokemonResponse";
 
 const mockPokemonContext: PokemonContextStructure = {
-  currentPokemonState: { currentPokemon: mockPokemonResponse },
+  currentPokemonState: {
+    currentPokemon: mockPokemonResponse,
+    currentDetailedPokemon: mockPokemonDetail,
+  },
   dispatch: jest.fn(),
 };
 

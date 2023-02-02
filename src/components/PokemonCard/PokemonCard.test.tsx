@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import TestWrapper from "../../mocks/wrappers/TestWrapper";
 import PokemonCard from "./PokemonCard";
-import mockPokemonResponse from "../../mocks/mockResponses/mockPokemonResponse";
+import { mockPokemonResponse } from "../../mocks/mockResponses/mockPokemonResponse";
 
 describe("Given a PokemonCard component", () => {
   describe("When it's rendered with the Pokemon 'charmander'", () => {

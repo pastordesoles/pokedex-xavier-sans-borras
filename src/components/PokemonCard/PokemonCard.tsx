@@ -12,18 +12,20 @@ const PokemonCard = ({
 }: PokemonCardProps): JSX.Element => {
   return (
     <PokemonCardStyled className="pokemon-card">
-      <img
-        className="pokemon-card__image"
-        src={image}
-        alt={name}
-        width="100"
-        height="100"
-        loading="lazy"
-      ></img>
+      <article>
+        <img
+          className="pokemon-card__image"
+          src={image}
+          alt={name}
+          width="100"
+          height="100"
+          loading="lazy"
+        ></img>
 
-      <Link to={`/pokemon/${name}`}>
-        <h3 className="pokemon-card__title">{capitalize(name)}</h3>
-      </Link>
+        <Link to={`/pokemon/${name}`}>
+          <h3 className="pokemon-card__title">{capitalize(name)}</h3>
+        </Link>
+      </article>
     </PokemonCardStyled>
   );
 };
