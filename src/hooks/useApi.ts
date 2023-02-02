@@ -53,7 +53,7 @@ const useApi = () => {
         dispatchUi(isLoadingFalseActionCreator());
         dispatchPokemon(loadPokemonActionsCreator(pokemonData));
       } catch (error: unknown) {
-        throw error;
+        dispatchUi(isLoadingFalseActionCreator());
       }
     },
     [details, dispatchPokemon, dispatchUi, newUrl]
@@ -92,7 +92,7 @@ const useApi = () => {
         dispatchUi(isLoadingFalseActionCreator());
         dispatchPokemon(loadPokemonDetailsActionsCreator(pokemonStats));
       } catch (error: unknown) {
-        throw error;
+        dispatchUi(isLoadingFalseActionCreator());
       }
     },
     [details, dispatchPokemon, dispatchUi]
