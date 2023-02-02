@@ -26,7 +26,13 @@ const PokemonList = (): JSX.Element => {
     <>
       <PokemonListStyled className="pokemon">
         <aside>
-          <img src="/images/immfly.png" alt="Immfly" width="100" height="100" />
+          <img
+            src="/images/immfly.png"
+            alt="Immfly"
+            width="100"
+            height="100"
+            className="immfly"
+          />
           <img
             src="/images/pokemonTitle.png"
             alt="Pokemon"
