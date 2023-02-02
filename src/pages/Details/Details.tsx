@@ -8,7 +8,6 @@ import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext"
 import UiContext from "../../stores/contexts/uiContext/UiContext";
 import DetailsStyled from "./DetailsStyled";
 import { Link } from "react-router-dom";
-import SearchFilter from "../../components/SearchFilter/SearchFilter";
 
 const Details = (): JSX.Element => {
   const {
@@ -33,7 +32,6 @@ const Details = (): JSX.Element => {
     <>
       {isLoading && <Loader />}
       <DetailsStyled>
-        <SearchFilter />
         <article className="pokemon-card">
           <Link to={`/pokemon`}>
             <FontAwesomeIcon className="return" icon={faXmark} />

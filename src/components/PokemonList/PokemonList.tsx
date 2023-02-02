@@ -4,6 +4,7 @@ import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext"
 import UiContext from "../../stores/contexts/uiContext/UiContext";
 import Loader from "../Loader/Loader";
 import PokemonCard from "../PokemonCard/PokemonCard";
+import SearchFilter from "../SearchFilter/SearchFilter";
 import PokemonListStyled from "./PokemonListStyled";
 
 const PokemonList = (): JSX.Element => {
@@ -41,6 +42,8 @@ const PokemonList = (): JSX.Element => {
           />
           <h2 className="pokemon__title">Generation 1</h2>
           <span>{`${currentPokemon.length} Pokemon`}</span>
+
+          <SearchFilter />
         </aside>
 
         {isLoading && <Loader />}

@@ -18,26 +18,46 @@ const useApi = () => {
   let newUrl = process.env.REACT_APP_API_URL!;
   let details = process.env.REACT_APP_API_URL_DETAILS!;
 
-  const loadAllPokemon = useCallback(async () => {
-    dispatchUi(isLoadingTrueActionCreator());
-    try {
-      const response = await fetch(newUrl);
-      const { results } = (await response.json()) as PokemonName;
+  const loadAllPokemon = useCallback(
+    async (name?: string) => {
+      dispatchUi(isLoadingTrueActionCreator());
+      try {
+        if (name) {
+          const detailsUrl = `${details}${name}`;
+          const response = await fetch(detailsUrl);
 
-      const pokemonData: PokemonData[] = [];
+          const results = (await response.json()) as PokemonDetail;
+          const pokemonData: PokemonData[] = [
+            {
+              image: `https://img.pokemondb.net/sprites/black-white/anim/normal/${results.name}.gif`,
+              name: results.name,
+            },
+          ];
 
-      results.forEach((pokemon) => {
-        pokemonData.push({
-          name: pokemon.name,
-          image: `https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`,
+          dispatchUi(isLoadingFalseActionCreator());
+          dispatchPokemon(loadPokemonActionsCreator(pokemonData));
+          return;
+        }
+
+        const response = await fetch(newUrl);
+        const { results } = (await response.json()) as PokemonName;
+
+        const pokemonData: PokemonData[] = [];
+
+        results.forEach((pokemon) => {
+          pokemonData.push({
+            name: pokemon.name,
+            image: `https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif`,
+          });
         });
-      });
-      dispatchUi(isLoadingFalseActionCreator());
-      dispatchPokemon(loadPokemonActionsCreator(pokemonData));
-    } catch (error: unknown) {
-      throw error;
-    }
-  }, [dispatchPokemon, dispatchUi, newUrl]);
+        dispatchUi(isLoadingFalseActionCreator());
+        dispatchPokemon(loadPokemonActionsCreator(pokemonData));
+      } catch (error: unknown) {
+        throw error;
+      }
+    },
+    [dispatchPokemon, dispatchUi, newUrl]
+  );
 
   const loadPokemonDetail = useCallback(
     async (name: string) => {

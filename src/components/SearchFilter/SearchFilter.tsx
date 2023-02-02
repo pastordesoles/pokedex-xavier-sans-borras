@@ -3,7 +3,7 @@ import useApi from "../../hooks/useApi";
 import SearchFilterStyled from "./SearchFilterStyled";
 
 const SearchFilter = (): JSX.Element => {
-  const { loadPokemonDetail } = useApi();
+  const { loadAllPokemon } = useApi();
 
   const debounce = <T extends any[]>(
     callbackFunction: (...args: T) => void,
@@ -17,8 +17,8 @@ const SearchFilter = (): JSX.Element => {
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debouncePost = useCallback(debounce(loadPokemonDetail, 1000), [
-    loadPokemonDetail,
+  const debouncePokemon = useCallback(debounce(loadAllPokemon, 1000), [
+    loadAllPokemon,
   ]);
 
   return (
@@ -29,7 +29,7 @@ const SearchFilter = (): JSX.Element => {
           type="search"
           className="input"
           onChange={(e) => {
-            debouncePost(e.target.value);
+            debouncePokemon(e.target.value);
           }}
         />
       </SearchFilterStyled>
