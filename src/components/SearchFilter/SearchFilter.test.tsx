@@ -11,7 +11,7 @@ describe("Given a SearchFilter component", () => {
 
       const inputSearch = screen.queryByRole("searchbox")!;
 
-      await userEvent.type(inputSearch, "pikachu", { delay: 2100 });
+      await userEvent.type(inputSearch, "p", { delay: 2100 });
 
       expect(inputSearch).toBeInTheDocument();
     });
