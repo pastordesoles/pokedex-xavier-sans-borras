@@ -20,6 +20,9 @@ jobs:
         env:
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
           REACT_APP_API_URL_DETAILS: ${{ secrets.REACT_APP_API_URL_DETAILS }}
+          REACT_APP_API_URL_DETAILS_ONE: ${{ secrets.REACT_APP_API_URL_DETAILS_ONE }}
+          REACT_APP_API_URL_DETAILS_TWO: ${{ secrets.REACT_APP_API_URL_DETAILS_TWO }}
+          REACT_APP_API_URL_DETAILS_THREE: ${{ secrets.REACT_APP_API_URL_DETAILS_THREE }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
