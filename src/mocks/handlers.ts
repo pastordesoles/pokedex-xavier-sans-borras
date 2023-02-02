@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { mockPokemonResponseRaw } from "./mockResponses/mockPokemonResponse";
 
-let apiUrl = "https://pokeapi.co/api/v2/pokemon?&limit=151";
+let apiUrl = process.env.REACT_APP_API_URL!;
 
 const handlers = [
   rest.get(`${apiUrl}`, (request, response, context) => {
