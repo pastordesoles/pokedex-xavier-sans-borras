@@ -1,6 +1,7 @@
 import {
   Action,
   LoadPokemonAction,
+  LoadPokemonDetail,
 } from "../../actions/pokemonActions/actions";
 import PokemonActionType from "../../actions/pokemonActions/pokemonActionTypes";
 import { CurrentPokemonState } from "../../contexts/pokemonContext/types";
@@ -10,13 +11,23 @@ const pokemonReducer = (
   action: Action
 ): CurrentPokemonState => {
   let newPokemonState: CurrentPokemonState;
-  newPokemonState =
-    action.type === PokemonActionType.loadPokemon
-      ? {
-          ...currentPokemonState,
-          currentPokemon: (action as LoadPokemonAction).payload,
-        }
-      : { ...currentPokemonState };
+
+  switch (action.type) {
+    case PokemonActionType.loadPokemon:
+      newPokemonState = {
+        ...currentPokemonState,
+        currentPokemon: (action as LoadPokemonAction).payload,
+      };
+      break;
+    case PokemonActionType.loadDetailedPokemon:
+      newPokemonState = {
+        ...currentPokemonState,
+        currentDetailedPokemon: (action as LoadPokemonDetail).payload,
+      };
+      break;
+    default:
+      newPokemonState = { ...currentPokemonState };
+  }
   return newPokemonState;
 };
 
