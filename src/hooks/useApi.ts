@@ -56,7 +56,7 @@ const useApi = () => {
         throw error;
       }
     },
-    [dispatchPokemon, dispatchUi, newUrl]
+    [details, dispatchPokemon, dispatchUi, newUrl]
   );
 
   const loadPokemonDetail = useCallback(
