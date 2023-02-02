@@ -1,7 +1,12 @@
-import mockPokemonResponse from "../../../mocks/mockResponses/mockPokemonResponse";
+import { PokemonDetail } from "../../../hooks/types";
+import {
+  mockPokemonDetail,
+  mockPokemonResponse,
+} from "../../../mocks/mockResponses/mockPokemonResponse";
 import {
   Action,
   LoadPokemonAction,
+  LoadPokemonDetail,
 } from "../../actions/pokemonActions/actions";
 import PokemonActionType from "../../actions/pokemonActions/pokemonActionTypes";
 import { CurrentPokemonState } from "../../contexts/pokemonContext/types";
@@ -12,6 +17,7 @@ describe("Given a pokemonReducer", () => {
     test("Then it should return a list of Pokemon", () => {
       const newPokemonState: CurrentPokemonState = {
         currentPokemon: mockPokemonResponse,
+        currentDetailedPokemon: mockPokemonDetail,
       };
 
       const action: LoadPokemonAction = {
@@ -32,13 +38,41 @@ describe("Given a pokemonReducer", () => {
     });
   });
 
+  describe("When it receives a Pokemon detail and the action loadDetailedPokemon", () => {
+    test("Then it should return a Pokemon detail", () => {
+      const newPokemonState: CurrentPokemonState = {
+        currentPokemon: mockPokemonResponse,
+        currentDetailedPokemon: mockPokemonDetail,
+      };
+
+      const action: LoadPokemonDetail = {
+        type: PokemonActionType.loadDetailedPokemon,
+        payload: newPokemonState.currentDetailedPokemon,
+      };
+
+      const currentPokemonState = {};
+
+      const resultPokemonState = pokemonReducer(
+        currentPokemonState as CurrentPokemonState,
+        action
+      );
+
+      expect(resultPokemonState.currentDetailedPokemon).toStrictEqual(
+        newPokemonState.currentDetailedPokemon
+      );
+    });
+  });
+
   describe("When it receives a list of Pokemon and an unknown action", () => {
     test("Then it should return the same list of Pokemon", () => {
       const unknownAction: Action = {
         type: PokemonActionType.unknownAction,
       };
 
-      const currentPokemonState: CurrentPokemonState = { currentPokemon: [] };
+      const currentPokemonState: CurrentPokemonState = {
+        currentPokemon: [],
+        currentDetailedPokemon: {} as PokemonDetail,
+      };
 
       const resultPokemon = pokemonReducer(currentPokemonState, unknownAction);
 
