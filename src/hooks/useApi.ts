@@ -23,7 +23,7 @@ const useApi = () => {
       dispatchUi(isLoadingTrueActionCreator());
       try {
         if (name) {
-          const detailsUrl = `${details}${name}`;
+          const detailsUrl = `${details}${name.toLowerCase()}`;
           const response = await fetch(detailsUrl);
 
           const results = (await response.json()) as PokemonDetail;
