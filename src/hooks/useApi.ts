@@ -1,4 +1,5 @@
 import { useCallback, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   loadPokemonActionsCreator,
   loadPokemonDetailsActionsCreator,
@@ -15,6 +16,8 @@ import { PokemonData, PokemonDetail, PokemonName, PokemonStats } from "./types";
 const useApi = () => {
   const { dispatch: dispatchPokemon } = useContext(PokemonContext);
   const { dispatch: dispatchUi } = useContext(UiContext);
+  const navigate = useNavigate();
+
   let newUrl = process.env.REACT_APP_API_URL!;
   let details = process.env.REACT_APP_API_URL_DETAILS!;
 
@@ -93,9 +96,10 @@ const useApi = () => {
         dispatchPokemon(loadPokemonDetailsActionsCreator(pokemonStats));
       } catch (error: unknown) {
         dispatchUi(isLoadingFalseActionCreator());
+        navigate("/pokemon");
       }
     },
-    [details, dispatchPokemon, dispatchUi]
+    [details, dispatchPokemon, dispatchUi, navigate]
   );
 
   return { loadAllPokemon, loadPokemonDetail };
