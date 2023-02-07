@@ -113,7 +113,43 @@ const useApi = () => {
     }
   }, [dispatchUi, favourites]);
 
-  return { loadAllPokemon, loadPokemonDetail, loadAllFavouritePokemon };
+  const deleteOnePokemon = useCallback(
+    async (pokemonId: string) => {
+      try {
+        await fetch(`${favourites}delete/${pokemonId}`, {
+          method: "DELETE",
+        });
+      } catch (error: unknown) {
+        dispatchUi(isLoadingFalseActionCreator());
+      }
+    },
+    [dispatchUi, favourites]
+  );
+
+  const addOnePokemon = useCallback(
+    async (pokemon: PokemonStats) => {
+      try {
+        const newPokemon = await fetch(`${favourites}add`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(pokemon),
+        });
+      } catch (error: unknown) {
+        dispatchUi(isLoadingFalseActionCreator());
+      }
+    },
+    [dispatchUi, favourites]
+  );
+
+  return {
+    loadAllPokemon,
+    loadPokemonDetail,
+    loadAllFavouritePokemon,
+    addOnePokemon,
+    deleteOnePokemon,
+  };
 };
 
 export default useApi;
