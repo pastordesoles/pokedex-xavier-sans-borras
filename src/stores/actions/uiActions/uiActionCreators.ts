@@ -1,4 +1,9 @@
-import { IsLoadingFalse, IsLoadingTrue } from "./actions";
+import {
+  IsLoadingFalse,
+  IsLoadingTrue,
+  OpenModalAction,
+  CloseModalAction,
+} from "./actions";
 import UiActionTypes from "./uiActionTypes";
 
 export const isLoadingTrueActionCreator = (): IsLoadingTrue => ({
@@ -7,4 +12,16 @@ export const isLoadingTrueActionCreator = (): IsLoadingTrue => ({
 
 export const isLoadingFalseActionCreator = (): IsLoadingFalse => ({
   type: UiActionTypes.isLoadingFalse,
+});
+
+export const openModalActionCreator = (
+  isError: boolean,
+  modalText: string
+): OpenModalAction => ({
+  type: UiActionTypes.openModal,
+  payload: { isError, modalText },
+});
+
+export const closeModalActionCreator = (): CloseModalAction => ({
+  type: UiActionTypes.closeModal,
 });
