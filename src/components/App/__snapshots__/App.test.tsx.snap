@@ -5,6 +5,7 @@ exports[`Given an App component When it's rendered with path '/*' Then it should
   className="sc-iBYQkv dBHnxI header__navigation"
 >
   <a
+    aria-label="Home"
     className="header__link"
     href="/pokemon"
     onClick={[Function]}
@@ -12,6 +13,7 @@ exports[`Given an App component When it's rendered with path '/*' Then it should
     Home
   </a>
   <a
+    aria-label="Favourites"
     className="header__link"
     href="/favourites"
     onClick={[Function]}
