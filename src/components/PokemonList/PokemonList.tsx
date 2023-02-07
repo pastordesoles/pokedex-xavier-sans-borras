@@ -2,26 +2,37 @@ import { useContext, useEffect } from "react";
 import useApi from "../../hooks/useApi";
 import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext";
 import UiContext from "../../stores/contexts/uiContext/UiContext";
+import FavouritePokemonCard from "../FavouritePokemonCard/FavouritePokemonCard";
 import Loader from "../Loader/Loader";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import SearchFilter from "../SearchFilter/SearchFilter";
 import PokemonListStyled from "./PokemonListStyled";
 
-const PokemonList = (): JSX.Element => {
+interface PokemonListProps {
+  isFavourite: boolean;
+}
+
+const PokemonList = ({ isFavourite }: PokemonListProps): JSX.Element => {
   const {
-    currentPokemonState: { currentPokemon },
+    currentPokemonState: { currentPokemon, currentFavouritePokemon },
   } = useContext(PokemonContext);
 
   const {
     currentUiState: { isLoading },
   } = useContext(UiContext);
 
-  const { loadAllPokemon } = useApi();
+  const { loadAllPokemon, loadAllFavouritePokemon } = useApi();
   useEffect(() => {
     (async () => {
       loadAllPokemon();
     })();
-  }, [loadAllPokemon]);
+  }, [loadAllFavouritePokemon, loadAllPokemon]);
+
+  useEffect(() => {
+    (async () => {
+      loadAllFavouritePokemon();
+    })();
+  }, [loadAllFavouritePokemon]);
 
   return (
     <>
@@ -41,16 +52,29 @@ const PokemonList = (): JSX.Element => {
             height="400"
           />
           <h2 className="pokemon__title">Generation 1</h2>
-          <span>{`${currentPokemon.length} Pokemon`}</span>
+          {!isLoading && !isFavourite && (
+            <span>{`${currentPokemon.length} Pokemon`}</span>
+          )}
 
-          <SearchFilter />
+          {!isLoading && isFavourite && (
+            <span>{`${currentFavouritePokemon.length} Pokemon`}</span>
+          )}
+          {!isLoading && !isFavourite && <SearchFilter />}
         </aside>
 
         {isLoading && <Loader />}
-        {!isLoading && (
+        {!isLoading && !isFavourite && (
           <ul className="pokemon__list">
             {currentPokemon.map((pokemon, key) => (
               <PokemonCard pokemon={pokemon} key={key} />
+            ))}
+          </ul>
+        )}
+
+        {!isLoading && isFavourite && (
+          <ul className="pokemon__list">
+            {currentFavouritePokemon.map((pokemon, key) => (
+              <FavouritePokemonCard pokemon={pokemon} key={key} />
             ))}
           </ul>
         )}
