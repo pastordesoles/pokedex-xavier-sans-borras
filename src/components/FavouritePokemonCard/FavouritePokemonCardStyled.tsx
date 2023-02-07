@@ -1,15 +1,6 @@
 import styled from "styled-components";
 
-const DetailsStyled = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-
+const FavouritePokemonCardStyled = styled.li`
   article {
     position: relative;
     padding: 2rem;
@@ -17,6 +8,7 @@ const DetailsStyled = styled.main`
     height: 450px;
     width: 320px;
     border: 1px solid black;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,10 +38,10 @@ const DetailsStyled = styled.main`
     font-weight: ${(props) => props.theme.fontWeights.bold};
   }
 
-  .favourite {
+  .delete {
     border-radius: 15%;
     padding: 0.5rem;
-    background-color: #bde7bd;
+    background-color: #ffb6b3;
   }
 
   .pokemon-card-stats {
@@ -67,4 +59,4 @@ const DetailsStyled = styled.main`
   }
 `;
 
-export default DetailsStyled;
+export default FavouritePokemonCardStyled;

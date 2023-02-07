@@ -1,5 +1,10 @@
 import { PokemonData, PokemonStats } from "../../../hooks/types";
-import { LoadPokemonAction, LoadPokemonDetail } from "./actions";
+import {
+  LoadPokemonAction,
+  LoadPokemonDetail,
+  DeleteFavouritePokemon,
+  LoadFavouritePokemon,
+} from "./actions";
 import PokemonActionType from "./pokemonActionTypes";
 
 export const loadPokemonActionsCreator = (
@@ -14,4 +19,18 @@ export const loadPokemonDetailsActionsCreator = (
 ): LoadPokemonDetail => ({
   type: PokemonActionType.loadDetailedPokemon,
   payload: pokemonDetail,
+});
+
+export const loadFavouritePokemonActionsCreator = (
+  pokemon: PokemonStats[]
+): LoadFavouritePokemon => ({
+  type: PokemonActionType.loadFavouritePokemon,
+  payload: pokemon,
+});
+
+export const deleteFavouritePokemonActionsCreator = (
+  pokemonId: string | number
+): DeleteFavouritePokemon => ({
+  type: PokemonActionType.deleteFavouritePokemon,
+  payload: pokemonId,
 });

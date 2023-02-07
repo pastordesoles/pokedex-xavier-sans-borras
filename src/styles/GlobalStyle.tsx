@@ -23,6 +23,7 @@ button,
 a {
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 ul {
   list-style: none;

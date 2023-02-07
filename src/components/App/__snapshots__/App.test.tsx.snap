@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Given an App component When it's rendered with path '/*' Then it should render 'not found page' 1`] = `null`;
+exports[`Given an App component When it's rendered with path '/*' Then it should render 'not found page' 1`] = `
+<nav
+  className="sc-gKPRtg gCPdIL header__navigation"
+>
+  <a
+    className="header__link"
+    href="/pokemon"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <a
+    className="header__link"
+    href="/favourites"
+    onClick={[Function]}
+  >
+    Favourites
+  </a>
+</nav>
+`;

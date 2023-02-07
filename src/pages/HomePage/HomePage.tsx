@@ -1,7 +1,7 @@
 import PokemonList from "../../components/PokemonList/PokemonList";
 
 const HomePage = (): JSX.Element => {
-  return <PokemonList />;
+  return <PokemonList isFavourite={false} />;
 };
 
 export default HomePage;

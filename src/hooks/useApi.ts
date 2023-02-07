@@ -1,8 +1,10 @@
 import { useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  loadPokemonActionsCreator,
+  loadFavouritePokemonActionsCreator,
   loadPokemonDetailsActionsCreator,
+  loadPokemonActionsCreator,
+  deleteFavouritePokemonActionsCreator,
 } from "../stores/actions/pokemonActions/pokemonActionCreators";
 import {
   isLoadingFalseActionCreator,
@@ -11,7 +13,13 @@ import {
 import PokemonContext from "../stores/contexts/pokemonContext/PokemonContext";
 import UiContext from "../stores/contexts/uiContext/UiContext";
 import capitalize from "../utils/capitalize";
-import { PokemonData, PokemonDetail, PokemonName, PokemonStats } from "./types";
+import {
+  FavouritePokemon,
+  PokemonData,
+  PokemonDetail,
+  PokemonName,
+  PokemonStats,
+} from "./types";
 
 const useApi = () => {
   const { dispatch: dispatchPokemon } = useContext(PokemonContext);
@@ -20,6 +28,7 @@ const useApi = () => {
 
   let newUrl = process.env.REACT_APP_API_URL!;
   let details = process.env.REACT_APP_API_URL_DETAILS!;
+  let favourites = process.env.REACT_APP_API_URL_LOCAL!;
 
   const loadAllPokemon = useCallback(
     async (name?: string) => {
@@ -102,7 +111,60 @@ const useApi = () => {
     [details, dispatchPokemon, dispatchUi, navigate]
   );
 
-  return { loadAllPokemon, loadPokemonDetail };
+  const loadAllFavouritePokemon = useCallback(async () => {
+    dispatchUi(isLoadingTrueActionCreator());
+    try {
+      const response = await fetch(`${favourites}list`);
+      const { pokemon } = (await response.json()) as FavouritePokemon;
+      dispatchUi(isLoadingFalseActionCreator());
+      dispatchPokemon(loadFavouritePokemonActionsCreator(pokemon));
+    } catch (error: unknown) {
+      dispatchUi(isLoadingFalseActionCreator());
+    }
+  }, [dispatchPokemon, dispatchUi, favourites]);
+
+  const deleteOnePokemon = useCallback(
+    async (pokemonId: string) => {
+      dispatchUi(isLoadingTrueActionCreator());
+      try {
+        await fetch(`${favourites}delete/${pokemonId}`, {
+          method: "DELETE",
+        });
+        dispatchUi(isLoadingFalseActionCreator());
+        dispatchPokemon(deleteFavouritePokemonActionsCreator(pokemonId));
+      } catch (error: unknown) {
+        dispatchUi(isLoadingFalseActionCreator());
+      }
+    },
+    [dispatchPokemon, dispatchUi, favourites]
+  );
+
+  const addOnePokemon = useCallback(
+    async (pokemon: PokemonStats) => {
+      dispatchUi(isLoadingTrueActionCreator());
+      try {
+        await fetch(`${favourites}add`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(pokemon),
+        });
+        dispatchUi(isLoadingFalseActionCreator());
+      } catch (error: unknown) {
+        dispatchUi(isLoadingFalseActionCreator());
+      }
+    },
+    [dispatchUi, favourites]
+  );
+
+  return {
+    loadAllPokemon,
+    loadPokemonDetail,
+    loadAllFavouritePokemon,
+    addOnePokemon,
+    deleteOnePokemon,
+  };
 };
 
 export default useApi;

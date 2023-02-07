@@ -10,4 +10,5 @@ export interface PokemonContextStructure {
 export interface CurrentPokemonState {
   currentPokemon: PokemonData[];
   currentDetailedPokemon: PokemonStats;
+  currentFavouritePokemon: PokemonStats[];
 }

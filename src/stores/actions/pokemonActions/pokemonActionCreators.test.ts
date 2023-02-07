@@ -1,7 +1,9 @@
-import { PokemonData, PokemonDetail, PokemonStats } from "../../../hooks/types";
+import { PokemonData, PokemonStats } from "../../../hooks/types";
 import {
-  loadPokemonActionsCreator,
+  loadFavouritePokemonActionsCreator,
   loadPokemonDetailsActionsCreator,
+  loadPokemonActionsCreator,
+  deleteFavouritePokemonActionsCreator,
 } from "./pokemonActionCreators";
 import PokemonActionType from "./pokemonActionTypes";
 
@@ -23,7 +25,7 @@ describe("Given a pokemonActionsCreators", () => {
   };
 
   describe("When it's function loadPokemonActionCreator receives a Pokemon named 'Charmander'", () => {
-    test("Then it should return an action having a property payload with the received Pokemon and a property type with with the load Pokemon action", () => {
+    test("Then it should return an action having a property payload with the received Pokemon and a property type with the load Pokemon action", () => {
       const returns = loadPokemonActionsCreator(pokemon);
 
       expect(returns).toHaveProperty("type", PokemonActionType.loadPokemon);
@@ -32,7 +34,7 @@ describe("Given a pokemonActionsCreators", () => {
   });
 
   describe("When it's function loadPokemonDetailsActionCreator receives a Pokemon named 'Charmander'", () => {
-    test("Then it should return an action having a property payload with the received Pokemon and a property type with with the load Pokemon action", () => {
+    test("Then it should return an action having a property payload with the received Pokemon and a property type with the load Pokemon action", () => {
       const returns = loadPokemonDetailsActionsCreator(pokemonDetail);
 
       expect(returns).toHaveProperty(
@@ -40,6 +42,30 @@ describe("Given a pokemonActionsCreators", () => {
         PokemonActionType.loadDetailedPokemon
       );
       expect(returns).toHaveProperty("payload", pokemonDetail);
+    });
+  });
+
+  describe("When it's function loadFavouritePokemonActionsCreator receives a Pokemon named 'Charmander'", () => {
+    test("Then it should return an action having a property payload with the received Pokemon and a property type with the load Pokemon action", () => {
+      const returns = loadFavouritePokemonActionsCreator([pokemonDetail]);
+
+      expect(returns).toHaveProperty(
+        "type",
+        PokemonActionType.loadFavouritePokemon
+      );
+      expect(returns).toHaveProperty("payload", [pokemonDetail]);
+    });
+  });
+
+  describe("When it's function deleteFavouritePokemonActionsCreator receives a Pokemon named 'Charmander'", () => {
+    test("Then it should return an action having a property payload with the received Pokemon id and a property type with the delete Pokemon action", () => {
+      const returns = deleteFavouritePokemonActionsCreator(pokemonDetail.id);
+
+      expect(returns).toHaveProperty(
+        "type",
+        PokemonActionType.deleteFavouritePokemon
+      );
+      expect(returns).toHaveProperty("payload", pokemonDetail.id);
     });
   });
 });

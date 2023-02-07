@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import LoaderTrueWrapper from "../../mocks/wrappers/LoaderTrueWrapper";
 import TestWrapper from "../../mocks/wrappers/TestWrapper";
 import Details from "./Details";
@@ -21,6 +22,18 @@ describe("Given a Details component", () => {
       const loadingGif = screen.getByTestId("custom-loading");
 
       expect(loadingGif).toBeInTheDocument();
+    });
+  });
+
+  describe("When it's rendered and the user clicks on the favourite button", () => {
+    test("Then it should be present in the document", () => {
+      render(<Details />, { wrapper: TestWrapper });
+
+      const favouriteButton = screen.getByTestId("favourite");
+
+      userEvent.click(favouriteButton!);
+
+      expect(favouriteButton).toBeInTheDocument();
     });
   });
 });
