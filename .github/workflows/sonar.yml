@@ -23,6 +23,10 @@ jobs:
           REACT_APP_API_URL_DETAILS_ONE: ${{ secrets.REACT_APP_API_URL_DETAILS_ONE }}
           REACT_APP_API_URL_DETAILS_TWO: ${{ secrets.REACT_APP_API_URL_DETAILS_TWO }}
           REACT_APP_API_URL_DETAILS_THREE: ${{ secrets.REACT_APP_API_URL_DETAILS_THREE }}
+          REACT_APP_API_URL_LOCAL_DELETE_ONE: ${{ secrets.REACT_APP_API_URL_LOCAL_DELETE_ONE }}
+          REACT_APP_API_URL_LOCAL_DELETE_TWO: ${{ secrets.REACT_APP_API_URL_LOCAL_DELETE_TWO }}
+          REACT_APP_API_URL_LOCAL_ADD_ONE: ${{ secrets.REACT_APP_API_URL_LOCAL_ADD_ONE }}
+          REACT_APP_API_URL_LOCAL_ADD_TWO: ${{ secrets.REACT_APP_API_URL_LOCAL_ADD_TWO }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
