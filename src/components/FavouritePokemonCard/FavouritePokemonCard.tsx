@@ -9,7 +9,7 @@ interface FavouritePokemonCardProps {
 }
 
 const FavouritePokemonCard = ({
-  pokemon: { abilities, height, id, image, name, types },
+  pokemon: { abilities, id, image, name, types },
 }: FavouritePokemonCardProps): JSX.Element => {
   const { deleteOnePokemon } = useApi();
 
@@ -41,10 +41,6 @@ const FavouritePokemonCard = ({
             <span>
               <span className="bold">Type: </span>
               {types}
-            </span>
-            <span>
-              <span className="bold">Height: </span>
-              {height}
             </span>
             <span>
               <span className="bold">Abilities:</span>
