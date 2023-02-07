@@ -73,8 +73,8 @@ const PokemonList = ({ isFavourite }: PokemonListProps): JSX.Element => {
 
         {!isLoading && isFavourite && (
           <ul className="pokemon__list">
-            {currentFavouritePokemon.map((pokemon, key) => (
-              <FavouritePokemonCard pokemon={pokemon} key={key} />
+            {currentFavouritePokemon.map((pokemon) => (
+              <FavouritePokemonCard pokemon={pokemon} key={pokemon.id} />
             ))}
           </ul>
         )}
