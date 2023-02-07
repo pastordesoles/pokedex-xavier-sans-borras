@@ -12,8 +12,8 @@ const PokemonCard = ({
 }: PokemonCardProps): JSX.Element => {
   return (
     <>
-      <Link to={`/pokemon/${name}`}>
-        <PokemonCardStyled className="pokemon-card">
+      <PokemonCardStyled className="pokemon-card">
+        <Link to={`/pokemon/${name}`}>
           <article>
             <img
               className="pokemon-card__image"
@@ -26,8 +26,8 @@ const PokemonCard = ({
 
             <h3 className="pokemon-card__title">{capitalize(name)}</h3>
           </article>
-        </PokemonCardStyled>
-      </Link>
+        </Link>
+      </PokemonCardStyled>
     </>
   );
 };

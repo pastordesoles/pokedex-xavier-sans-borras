@@ -8,5 +8,10 @@ interface UiContextStructure {
 
 export interface CurrentUiState {
   isLoading: boolean;
+  isOpen: boolean;
+  modalInformation: {
+    isError: boolean;
+    modalText: string;
+  };
 }
 export default UiContextStructure;

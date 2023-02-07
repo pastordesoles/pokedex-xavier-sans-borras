@@ -12,6 +12,11 @@ const UiContextProvider = ({
 }: UiContextProviderProps): JSX.Element => {
   const [currentUiState, dispatch] = useReducer(uiReducer, {
     isLoading: false,
+    isOpen: false,
+    modalInformation: {
+      isError: false,
+      modalText: "",
+    },
   } as CurrentUiState);
   return (
     <UiContext.Provider value={{ currentUiState, dispatch }}>
