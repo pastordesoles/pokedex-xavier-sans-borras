@@ -20,3 +20,7 @@ export interface PokemonStats extends PokemonData {
   id: number | string;
   types: string;
 }
+
+export interface FavouritePokemon {
+  pokemon: PokemonStats[];
+}
