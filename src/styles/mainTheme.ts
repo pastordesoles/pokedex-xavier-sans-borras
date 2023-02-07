@@ -7,10 +7,10 @@ const mainTheme: DefaultTheme = {
       gray: "#EEEEEE",
     },
     error: {
-      base: "#f77272",
+      base: "#fbbaba",
     },
     success: {
-      base: "#67e5ce",
+      base: "#a8f0e3",
     },
   },
 
