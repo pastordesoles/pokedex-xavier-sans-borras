@@ -1,8 +1,9 @@
 import { useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  loadPokemonActionsCreator,
+  loadFavouritePokemonActionsCreator,
   loadPokemonDetailsActionsCreator,
+  loadPokemonActionsCreator,
 } from "../stores/actions/pokemonActions/pokemonActionCreators";
 import {
   isLoadingFalseActionCreator,
