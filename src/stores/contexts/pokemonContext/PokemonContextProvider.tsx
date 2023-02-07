@@ -12,6 +12,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
   const [currentPokemonState, dispatch] = useReducer(pokemonReducer, {
     currentPokemon: [],
     currentDetailedPokemon: {} as PokemonStats,
+    currentFavouritePokemon: [],
   } as CurrentPokemonState);
 
   return (

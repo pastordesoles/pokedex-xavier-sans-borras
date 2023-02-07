@@ -8,6 +8,7 @@ const mockPokemonContext: PokemonContextStructure = {
   currentPokemonState: {
     currentPokemon: mockPokemonResponse,
     currentDetailedPokemon: mockPokemonDetail,
+    currentFavouritePokemon: [mockPokemonDetail],
   },
   dispatch: jest.fn(),
 };
