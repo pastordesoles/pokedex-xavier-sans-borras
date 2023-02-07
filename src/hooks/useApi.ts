@@ -4,6 +4,7 @@ import {
   loadFavouritePokemonActionsCreator,
   loadPokemonDetailsActionsCreator,
   loadPokemonActionsCreator,
+  deleteFavouritePokemonActionsCreator,
 } from "../stores/actions/pokemonActions/pokemonActionCreators";
 import {
   isLoadingFalseActionCreator,
@@ -12,7 +13,13 @@ import {
 import PokemonContext from "../stores/contexts/pokemonContext/PokemonContext";
 import UiContext from "../stores/contexts/uiContext/UiContext";
 import capitalize from "../utils/capitalize";
-import { PokemonData, PokemonDetail, PokemonName, PokemonStats } from "./types";
+import {
+  FavouritePokemon,
+  PokemonData,
+  PokemonDetail,
+  PokemonName,
+  PokemonStats,
+} from "./types";
 
 const useApi = () => {
   const { dispatch: dispatchPokemon } = useContext(PokemonContext);
@@ -108,11 +115,13 @@ const useApi = () => {
     dispatchUi(isLoadingTrueActionCreator());
     try {
       const response = await fetch(`${favourites}list`);
-      const results = (await response.json()) as PokemonStats[];
+      const { pokemon } = (await response.json()) as FavouritePokemon;
+      dispatchUi(isLoadingFalseActionCreator());
+      dispatchPokemon(loadFavouritePokemonActionsCreator(pokemon));
     } catch (error: unknown) {
       dispatchUi(isLoadingFalseActionCreator());
     }
-  }, [dispatchUi, favourites]);
+  }, [dispatchPokemon, dispatchUi, favourites]);
 
   const deleteOnePokemon = useCallback(
     async (pokemonId: string) => {
@@ -121,11 +130,13 @@ const useApi = () => {
         await fetch(`${favourites}delete/${pokemonId}`, {
           method: "DELETE",
         });
+        dispatchUi(isLoadingFalseActionCreator());
+        dispatchPokemon(deleteFavouritePokemonActionsCreator(pokemonId));
       } catch (error: unknown) {
         dispatchUi(isLoadingFalseActionCreator());
       }
     },
-    [dispatchUi, favourites]
+    [dispatchPokemon, dispatchUi, favourites]
   );
 
   const addOnePokemon = useCallback(
