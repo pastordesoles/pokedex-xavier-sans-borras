@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import useApi from "../../hooks/useApi";
 import { PokemonStats } from "../../hooks/types";
+import FavouritePokemonCardStyled from "./FavouritePokemonCardStyled";
 
 interface FavouritePokemonCardProps {
   pokemon: PokemonStats;
@@ -14,7 +15,7 @@ const FavouritePokemonCard = ({
 
   return (
     <>
-      <li>
+      <FavouritePokemonCardStyled>
         <article className="pokemon-card">
           <div className="pokemon-card-basic">
             <img
@@ -31,6 +32,7 @@ const FavouritePokemonCard = ({
 
           <FontAwesomeIcon
             className="delete"
+            data-testid="delete"
             icon={faXmark}
             onClick={() => deleteOnePokemon(`${id}`)}
           />
@@ -55,7 +57,7 @@ const FavouritePokemonCard = ({
             )}
           </div>
         </article>
-      </li>
+      </FavouritePokemonCardStyled>
     </>
   );
 };
