@@ -11,10 +11,6 @@ let pokemonName = process.env.REACT_APP_API_URL_DETAILS_ONE!;
 let pokemonNameTwo = process.env.REACT_APP_API_URL_DETAILS_TWO!;
 let pokemonNameThree = process.env.REACT_APP_API_URL_DETAILS_THREE!;
 let apiUrlLocal = process.env.REACT_APP_API_URL_LOCAL!;
-let apiUrlLocalDeleteOne = process.env.REACT_APP_API_URL_LOCAL_DELETE_ONE!;
-let apiUrlLocalDeleteTwo = process.env.REACT_APP_API_URL_LOCAL_DELETE_TWO!;
-let apiUrlLocalAdd = process.env.REACT_APP_API_URL_LOCAL_ADD_ONE!;
-let apiUrlLocalAddTwo = process.env.REACT_APP_API_URL_LOCAL_ADD_TWO!;
 
 const handlers = [
   rest.get(`${apiUrl}`, (request, response, context) => {
