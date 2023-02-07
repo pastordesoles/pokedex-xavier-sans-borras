@@ -8,10 +8,11 @@ import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext"
 import UiContext from "../../stores/contexts/uiContext/UiContext";
 import DetailsStyled from "./DetailsStyled";
 import { Link } from "react-router-dom";
+import Modal from "../../components/Modal/Modal";
 
 const Details = (): JSX.Element => {
   const {
-    currentUiState: { isLoading },
+    currentUiState: { isLoading, isOpen },
   } = useContext(UiContext);
 
   const {
@@ -81,6 +82,7 @@ const Details = (): JSX.Element => {
           </div>
         </article>
       </DetailsStyled>
+      {isOpen && <Modal />}
     </>
   );
 };

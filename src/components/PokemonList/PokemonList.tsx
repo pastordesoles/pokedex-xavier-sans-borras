@@ -4,6 +4,7 @@ import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext"
 import UiContext from "../../stores/contexts/uiContext/UiContext";
 import FavouritePokemonCard from "../FavouritePokemonCard/FavouritePokemonCard";
 import Loader from "../Loader/Loader";
+import Modal from "../Modal/Modal";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import SearchFilter from "../SearchFilter/SearchFilter";
 import PokemonListStyled from "./PokemonListStyled";
@@ -18,7 +19,7 @@ const PokemonList = ({ isFavourite }: PokemonListProps): JSX.Element => {
   } = useContext(PokemonContext);
 
   const {
-    currentUiState: { isLoading },
+    currentUiState: { isLoading, isOpen },
   } = useContext(UiContext);
 
   const { loadAllPokemon, loadAllFavouritePokemon } = useApi();
@@ -79,6 +80,7 @@ const PokemonList = ({ isFavourite }: PokemonListProps): JSX.Element => {
           </ul>
         )}
       </PokemonListStyled>
+      {isOpen && <Modal />}
     </>
   );
 };

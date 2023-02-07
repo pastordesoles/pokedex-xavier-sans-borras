@@ -2,7 +2,7 @@
 
 exports[`Given an App component When it's rendered with path '/*' Then it should render 'not found page' 1`] = `
 <nav
-  className="sc-gKPRtg gCPdIL header__navigation"
+  className="sc-iBYQkv dBHnxI header__navigation"
 >
   <a
     className="header__link"

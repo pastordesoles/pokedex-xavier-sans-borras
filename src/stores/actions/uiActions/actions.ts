@@ -2,6 +2,7 @@ import UiActionTypes from "./uiActionTypes";
 
 export interface UiAction {
   type: UiActionTypes;
+  payload?: unknown;
 }
 
 export interface IsLoadingTrue extends UiAction {

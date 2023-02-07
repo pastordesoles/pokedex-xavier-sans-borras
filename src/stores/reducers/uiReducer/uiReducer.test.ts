@@ -101,4 +101,22 @@ describe("Given the function uiReducer", () => {
       expect(expectedUiState).toStrictEqual(newUiState);
     });
   });
+
+  describe("When it receives an unknown action", () => {
+    test("Then it should return the same ui state", () => {
+      const unknownAction: UiAction = {
+        type: UiActionTypes.unknownAction,
+      };
+
+      const currentUiState: CurrentUiState = {
+        isLoading: false,
+        isOpen: false,
+        modalInformation: { isError: false, modalText: "" },
+      };
+
+      const resultUi = uiReducer(currentUiState, unknownAction);
+
+      expect(resultUi).toStrictEqual(currentUiState);
+    });
+  });
 });

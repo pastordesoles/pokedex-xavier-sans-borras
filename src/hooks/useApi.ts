@@ -9,6 +9,7 @@ import {
 import {
   isLoadingFalseActionCreator,
   isLoadingTrueActionCreator,
+  openModalActionCreator,
 } from "../stores/actions/uiActions/uiActionCreators";
 import PokemonContext from "../stores/contexts/pokemonContext/PokemonContext";
 import UiContext from "../stores/contexts/uiContext/UiContext";
@@ -120,6 +121,7 @@ const useApi = () => {
       dispatchPokemon(loadFavouritePokemonActionsCreator(pokemon));
     } catch (error: unknown) {
       dispatchUi(isLoadingFalseActionCreator());
+      dispatchUi(openModalActionCreator(true, "Better reload again..."));
     }
   }, [dispatchPokemon, dispatchUi, favourites]);
 
@@ -132,8 +134,12 @@ const useApi = () => {
         });
         dispatchUi(isLoadingFalseActionCreator());
         dispatchPokemon(deleteFavouritePokemonActionsCreator(pokemonId));
+        dispatchUi(openModalActionCreator(false, "Pokemon deleted"));
       } catch (error: unknown) {
         dispatchUi(isLoadingFalseActionCreator());
+        dispatchUi(
+          openModalActionCreator(true, "The Pokemon is still here...")
+        );
       }
     },
     [dispatchPokemon, dispatchUi, favourites]
@@ -150,6 +156,7 @@ const useApi = () => {
           },
           body: JSON.stringify(pokemon),
         });
+
         dispatchUi(isLoadingFalseActionCreator());
       } catch (error: unknown) {
         dispatchUi(isLoadingFalseActionCreator());

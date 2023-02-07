@@ -3,6 +3,7 @@ enum UiActionTypes {
   isLoadingFalse,
   openModal,
   closeModal,
+  unknownAction,
 }
 
 export default UiActionTypes;
