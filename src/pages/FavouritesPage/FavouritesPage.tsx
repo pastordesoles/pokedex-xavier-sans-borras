@@ -1,5 +1,7 @@
+import PokemonList from "../../components/PokemonList/PokemonList";
+
 const FavouritesPage = (): JSX.Element => {
-  return <h1>aa</h1>;
+  return <PokemonList isFavourite={true} />;
 };
 
 export default FavouritesPage;
