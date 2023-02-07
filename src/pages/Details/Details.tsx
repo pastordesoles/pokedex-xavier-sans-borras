@@ -35,7 +35,7 @@ const Details = (): JSX.Element => {
       {isLoading && <Loader />}
       <DetailsStyled>
         <article className="pokemon-card">
-          <Link to={`/pokemon`}>
+          <Link to={`/pokemon`} aria-label="Return">
             <FontAwesomeIcon className="return" icon={faXmark} />
           </Link>
           <div className="pokemon-card-basic">
@@ -54,6 +54,7 @@ const Details = (): JSX.Element => {
           <FontAwesomeIcon
             className="favourite"
             data-testid="favourite"
+            aria-label="favourite"
             icon={faHeart}
             onClick={() => addOnePokemon(currentDetailedPokemon)}
           />
