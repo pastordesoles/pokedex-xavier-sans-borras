@@ -115,6 +115,7 @@ const useApi = () => {
 
   const deleteOnePokemon = useCallback(
     async (pokemonId: string) => {
+      dispatchUi(isLoadingTrueActionCreator());
       try {
         await fetch(`${favourites}delete/${pokemonId}`, {
           method: "DELETE",
@@ -128,8 +129,9 @@ const useApi = () => {
 
   const addOnePokemon = useCallback(
     async (pokemon: PokemonStats) => {
+      dispatchUi(isLoadingTrueActionCreator());
       try {
-        const newPokemon = await fetch(`${favourites}add`, {
+        await fetch(`${favourites}add`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
