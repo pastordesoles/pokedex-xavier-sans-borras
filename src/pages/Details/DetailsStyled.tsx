@@ -46,6 +46,12 @@ const DetailsStyled = styled.main`
     font-weight: ${(props) => props.theme.fontWeights.bold};
   }
 
+  .favourite {
+    border-radius: 15%;
+    padding: 0.5rem;
+    background-color: #bde7bd;
+  }
+
   .pokemon-card-stats {
     width: 100%;
     display: flex;

@@ -52,6 +52,7 @@ const Details = (): JSX.Element => {
 
           <FontAwesomeIcon
             className="favourite"
+            data-testid="favourite"
             icon={faHeart}
             onClick={() => addOnePokemon(currentDetailedPokemon)}
           />
