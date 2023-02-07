@@ -20,6 +20,7 @@ const useApi = () => {
 
   let newUrl = process.env.REACT_APP_API_URL!;
   let details = process.env.REACT_APP_API_URL_DETAILS!;
+  let favourites = process.env.REACT_APP_API_URL_LOCAL!;
 
   const loadAllPokemon = useCallback(
     async (name?: string) => {
@@ -102,7 +103,17 @@ const useApi = () => {
     [details, dispatchPokemon, dispatchUi, navigate]
   );
 
-  return { loadAllPokemon, loadPokemonDetail };
+  const loadAllFavouritePokemon = useCallback(async () => {
+    dispatchUi(isLoadingTrueActionCreator());
+    try {
+      const response = await fetch(`${favourites}list`);
+      const results = (await response.json()) as PokemonStats[];
+    } catch (error: unknown) {
+      dispatchUi(isLoadingFalseActionCreator());
+    }
+  }, [dispatchUi, favourites]);
+
+  return { loadAllPokemon, loadPokemonDetail, loadAllFavouritePokemon };
 };
 
 export default useApi;
