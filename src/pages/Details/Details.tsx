@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Loader from "../../components/Loader/Loader";
 import useApi from "../../hooks/useApi";
 import PokemonContext from "../../stores/contexts/pokemonContext/PokemonContext";
@@ -17,10 +17,11 @@ const Details = (): JSX.Element => {
   const {
     currentPokemonState: {
       currentDetailedPokemon: { abilities, height, id, image, name, types },
+      currentDetailedPokemon,
     },
   } = useContext(PokemonContext);
 
-  const { loadPokemonDetail } = useApi();
+  const { loadPokemonDetail, addOnePokemon } = useApi();
 
   const { pokemonName } = useParams();
 
@@ -48,6 +49,12 @@ const Details = (): JSX.Element => {
 
             <h3 className="pokemon-card-basic__title">{name}</h3>
           </div>
+
+          <FontAwesomeIcon
+            className="favourite"
+            icon={faHeart}
+            onClick={() => addOnePokemon(currentDetailedPokemon)}
+          />
 
           <div className="pokemon-card-stats">
             <span>

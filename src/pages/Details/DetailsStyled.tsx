@@ -21,7 +21,7 @@ const DetailsStyled = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     @media only screen and (min-width: 1150px) {
       :hover {
         background-color: #bebebe;

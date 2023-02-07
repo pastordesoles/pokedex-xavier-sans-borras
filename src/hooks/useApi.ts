@@ -138,6 +138,7 @@ const useApi = () => {
           },
           body: JSON.stringify(pokemon),
         });
+        dispatchUi(isLoadingFalseActionCreator());
       } catch (error: unknown) {
         dispatchUi(isLoadingFalseActionCreator());
       }
