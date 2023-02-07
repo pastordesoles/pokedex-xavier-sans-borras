@@ -55,19 +55,19 @@ const handlers = [
     );
   }),
 
-  rest.delete(`${apiUrlLocalDeleteOne}`, (request, response, context) => {
+  rest.delete(`${apiUrlLocal}delete/1`, (request, response, context) => {
     return response.networkError("Error");
   }),
 
-  rest.delete(`${apiUrlLocalDeleteTwo}`, (request, response, context) => {
+  rest.delete(`${apiUrlLocal}delete/2`, (request, response, context) => {
     return response(context.status(200));
   }),
 
-  rest.post(`${apiUrlLocalAdd}`, (request, response, context) => {
+  rest.post(`${apiUrlLocal}add`, (request, response, context) => {
     return response.once(context.status(201));
   }),
 
-  rest.post(`${apiUrlLocalAddTwo}`, (request, response, context) => {
+  rest.post(`${apiUrlLocal}add`, (request, response, context) => {
     return response.networkError("Error");
   }),
 ];
