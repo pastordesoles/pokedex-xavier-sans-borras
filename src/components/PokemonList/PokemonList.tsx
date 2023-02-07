@@ -40,14 +40,14 @@ const PokemonList = ({ isFavourite }: PokemonListProps): JSX.Element => {
       <PokemonListStyled className="pokemon">
         <aside>
           <img
-            src="/images/immfly.png"
+            src="/images/immfly.webp"
             alt="Immfly"
             width="100"
             height="100"
             className="immfly"
           />
           <img
-            src="/images/pokemonTitle.png"
+            src="/images/pokemonTitle.webp"
             alt="Pokemon"
             width="400"
             height="400"
