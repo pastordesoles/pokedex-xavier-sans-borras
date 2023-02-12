@@ -10,6 +10,7 @@
 - [General Info](#general-information)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Project Status](#project-status)
 - [Contact](#contact)
@@ -39,6 +40,10 @@ Basic Read that uses the Pokeapi to show data from the first generation of Pokem
 - Get detailed information about the Pokemon you choose.
 - Filter Pokemons by name.
 - Create your own favourites list.
+
+## Screenshots
+
+![Screenshots](public/images/readme-pictures-pokedex.webp)
 
 ## Setup
 
