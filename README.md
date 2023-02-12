@@ -20,7 +20,7 @@
 
 > Favourites API repository here [_here_](https://github.com/pastordesoles/pokedex-xavier-sans-borras-api).
 
-Basic Read that uses the Pokeapi to show data from the first generation of Pokemon. You can see a general list, click on to a Pokemon and get detailed information about it and filter by name. The website is responsive with different breakpoints for mobile, tablet or desktop.
+Basic Read that uses the Pokeapi to show data from the first generation of Pokemon. You can see a general list, click on a Pokemon and get detailed information about it. You can also filter by name. The website is responsive with different breakpoints for mobile, tablet or desktop.
 
 ## Technologies Used
 
@@ -39,7 +39,7 @@ Basic Read that uses the Pokeapi to show data from the first generation of Pokem
 - Get a list with the first generation of Pokemons.
 - Get detailed information about the Pokemon you choose.
 - Filter Pokemons by name.
-- Create your own favourites list.
+- Create your own favourites list by adding and deleting Pokemons.
 
 ## Screenshots
 
@@ -57,7 +57,7 @@ You will also see any lint errors in the console.
 
 ## Project Status
 
-Project is: _in progress_
+Project is: _MVP done_
 
 ## Contact
 
